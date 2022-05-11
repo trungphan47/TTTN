@@ -1,0 +1,53 @@
+{
+  "TC14": {
+    "departStation": "Nha Trang",
+    "arriveStation": "Sài Gòn",
+    "seatType": "Soft seat with air conditioner",
+    "ticketAmount": "5"
+  },
+  "TC15": {
+    "departStation": "Đà Nẵng",
+    "arriveStation": "Sài Gòn",
+    "seatType": "Seat type HS SS SSC HB SB SBC",
+    "ticketPrice": "Price (VND) 310000 335000 360000 410000 460000 510000"
+  },
+  "TC16": {
+    "departStation": "Đà Nẵng",
+    "arriveStation": "Huế",
+    "seatType": "Soft seat with air conditioner",
+    "ticketAmount": "1"
+  },
+  "TC17": {
+    "departStation": "Đà Nẵng",
+    "arriveStation": "Huế",
+    "seatType": "Soft seat with air conditioner",
+    "ticketAmount": "5"
+  },
+  "FTTC501": {
+    "departStation": "Đà Nẵng",
+    "arriveStation": "Quảng Ngãi",
+    "seatType": "Soft bed",
+    "ticketAmount": "3"
+  },
+  "FTTC502": {
+    "departStation": "Đà Nẵng",
+    "arriveStation": "Quảng Ngãi",
+    "seatType": "Soft bed",
+    "ticketAmount": "1"
+  },
+  "FTTC303": {
+    "HS": 150000
+  },
+  "TC37": {
+      "seatCode": "404",
+      "phone": "012650.888.79",
+      "skype": "vietthanhle.lg",
+      "email": "thanh.viet.le@logigear.com"
+  },
+  "TC61": {
+    "departStation": "Đà Nẵng",
+    "arriveStation": "Quảng Ngãi",
+    "seatType": "Soft bed",
+    "ticketAmount": "1"
+  }
+}
