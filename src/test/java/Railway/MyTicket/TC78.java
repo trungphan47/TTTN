@@ -6,7 +6,7 @@ import Railway.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC69 extends TestBase {
+public class TC78 extends TestBase {
 
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
@@ -14,7 +14,7 @@ public class TC69 extends TestBase {
     BookTicketPage bookTicketPage = new BookTicketPage();
     RegisterPage registerPage = new RegisterPage();
 
-    @Test(description = "User can filter tickets by choosing Depart Station")
+    @Test(description = "User can filter tickets by choosing Depart Station ,Arrive Station and Status")
     public void TC01() {
 
         System.out.println("Pre-condition: Create and activate a new account");
@@ -40,18 +40,24 @@ public class TC69 extends TestBase {
         System.out.println("Step 4: Click on \"My ticket\" tab");
         homePage.goToMyTicketPage();
 
-        System.out.println("Step 5: Choosing Depart Station");
+        System.out.println("Step 5: Choosing Arriver Station");
+        myTicketPage.selectDropDownArriveStation("Phan Thiết");
+
+        System.out.println("Step 6: Choosing Depart Station");
         myTicketPage.selectDropDownDepartStation("Sài Gòn");
 
-        System.out.println("Step 6: Click ApplyFilter button ");
+        System.out.println("Step 7: Choosing Status");
+        myTicketPage.selectDropDownStatus("New");
+
+        System.out.println("Step 8: Click ApplyFilter button ");
         myTicketPage.clickApplyFilterButton();
 
-        System.out.println("Step 7: Verify Tickets are Display");
+        System.out.println("Step 9: Verify Tickets are Display");
         Assert.assertFalse(myTicketPage.isLblNoResultFoundErrorMessage(), "No Result Found Error Message is display");
 
     }
 
-    @Test(description = "User can filter tickets by choosing Depart Station")
+    @Test(description = "User can filter tickets by choosing Depart Station, Arrive Station and Status")
     public void TC02() {
 
         System.out.println("Pre-condition: Create and activate a new account");
@@ -78,12 +84,18 @@ public class TC69 extends TestBase {
         homePage.goToMyTicketPage();
 
         System.out.println("Step 5: Choosing Depart Station");
-        myTicketPage.selectDropDownDepartStation("Huế");
+        myTicketPage.selectDropDownDepartStation("Đà Nẵng");
 
-        System.out.println("Step 6: Click ApplyFilter button ");
+        System.out.println("Step 6: Choosing Arrive Station");
+        myTicketPage.selectDropDownArriveStation("Huế");
+
+        System.out.println("Step 7: Choosing Status");
+        myTicketPage.selectDropDownStatus("New");
+
+        System.out.println("Step 8: Click ApplyFilter button ");
         myTicketPage.clickApplyFilterButton();
 
-        System.out.println("Step 7: Verify No Result Found Error Message Display");
+        System.out.println("Step 9: Verify No Result Found Error Message Display");
         Assert.assertTrue(myTicketPage.isLblNoResultFoundErrorMessage(), "Tickets are display");
 
     }

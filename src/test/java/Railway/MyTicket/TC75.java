@@ -6,7 +6,7 @@ import Railway.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC69 extends TestBase {
+public class TC75 extends TestBase {
 
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
@@ -14,7 +14,7 @@ public class TC69 extends TestBase {
     BookTicketPage bookTicketPage = new BookTicketPage();
     RegisterPage registerPage = new RegisterPage();
 
-    @Test(description = "User can filter tickets by choosing Depart Station")
+    @Test(description = "User can filter tickets by choosing Arrive Station and correct Depart Date")
     public void TC01() {
 
         System.out.println("Pre-condition: Create and activate a new account");
@@ -24,6 +24,7 @@ public class TC69 extends TestBase {
         String password = Utilities.getPasswordRandom();
         String confirmPassword = password;
         String pid = Utilities.getPidRandom();
+        String departDate = Utilities.getDepartDate(4);
         registerPage.register(username, password, confirmPassword, pid);
 
         System.out.println("Step 1: Navigate to QA Railway Website");
@@ -40,18 +41,21 @@ public class TC69 extends TestBase {
         System.out.println("Step 4: Click on \"My ticket\" tab");
         homePage.goToMyTicketPage();
 
-        System.out.println("Step 5: Choosing Depart Station");
-        myTicketPage.selectDropDownDepartStation("Sài Gòn");
+        System.out.println("Step 5: Choosing Arrive Station");
+        myTicketPage.selectDropDownArriveStation("Phan Thiết");
 
-        System.out.println("Step 6: Click ApplyFilter button ");
+        System.out.println("Step 6: Enter correct DepartDate");
+        myTicketPage.enterDepartDate(departDate);
+
+        System.out.println("Step 7: Click ApplyFilter button ");
         myTicketPage.clickApplyFilterButton();
 
-        System.out.println("Step 7: Verify Tickets are Display");
+        System.out.println("Step 8: Verify Tickets are Display");
         Assert.assertFalse(myTicketPage.isLblNoResultFoundErrorMessage(), "No Result Found Error Message is display");
 
     }
 
-    @Test(description = "User can filter tickets by choosing Depart Station")
+    @Test(description = "User can filter tickets by choosing Arrive Station and correct Depart Date")
     public void TC02() {
 
         System.out.println("Pre-condition: Create and activate a new account");
@@ -61,6 +65,7 @@ public class TC69 extends TestBase {
         String password = Utilities.getPasswordRandom();
         String confirmPassword = password;
         String pid = Utilities.getPidRandom();
+        String departDate = Utilities.getDepartDate(4);
         registerPage.register(username, password, confirmPassword, pid);
 
         System.out.println("Step 1: Navigate to QA Railway Website");
@@ -77,14 +82,16 @@ public class TC69 extends TestBase {
         System.out.println("Step 4: Click on \"My ticket\" tab");
         homePage.goToMyTicketPage();
 
-        System.out.println("Step 5: Choosing Depart Station");
-        myTicketPage.selectDropDownDepartStation("Huế");
+        System.out.println("Step 5: Choosing Arrive Station");
+        myTicketPage.selectDropDownArriveStation("Huế");
 
-        System.out.println("Step 6: Click ApplyFilter button ");
+        System.out.println("Step 6: Filter tickets by correct DepartDate");
+        myTicketPage.enterDepartDate(departDate);
+
+        System.out.println("Step 7: Click ApplyFilter button ");
         myTicketPage.clickApplyFilterButton();
 
-        System.out.println("Step 7: Verify No Result Found Error Message Display");
+        System.out.println("Step 8: Verify No Result Found Error Message Display");
         Assert.assertTrue(myTicketPage.isLblNoResultFoundErrorMessage(), "Tickets are display");
-
     }
 }

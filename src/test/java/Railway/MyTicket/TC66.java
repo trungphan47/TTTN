@@ -6,7 +6,7 @@ import Railway.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC67 extends TestBase {
+public class TC66 extends TestBase {
 
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
@@ -14,8 +14,8 @@ public class TC67 extends TestBase {
     BookTicketPage bookTicketPage = new BookTicketPage();
     RegisterPage registerPage = new RegisterPage();
 
-    @Test(description = "User can filter tickets by entering incorrect Depart Date format")
-    public void TC67() {
+    @Test(description = "User can filter tickets by entering correct Depart Date format")
+    public void TC01() {
 
         System.out.println("Pre-condition: Create and activate a new account");
         homePage.open();
@@ -24,7 +24,7 @@ public class TC67 extends TestBase {
         String password = Utilities.getPasswordRandom();
         String confirmPassword = password;
         String pid = Utilities.getPidRandom();
-        String departDate=Utilities.getDepartDate(7);
+        String departDate = Utilities.getDepartDate(4);
         registerPage.register(username, password, confirmPassword, pid);
 
         System.out.println("Step 1: Navigate to QA Railway Website");
@@ -41,14 +41,14 @@ public class TC67 extends TestBase {
         System.out.println("Step 4: Click on \"My ticket\" tab");
         homePage.goToMyTicketPage();
 
-        System.out.println("Step 5: Enter incorrect DepartDate");
-        myTicketPage.enterDepartDate(departDate+"1");
+        System.out.println("Step 5: Enter correct DepartDate");
+        myTicketPage.enterDepartDate(departDate);
 
         System.out.println("Step 6: Click ApplyFilter button ");
         myTicketPage.clickApplyFilterButton();
 
-        System.out.println("Step 7: Verify Error Message Display");
-        Assert.assertTrue(myTicketPage.isLblMalformedDateErrorMessage(), "Malformed Date Error Message is display");
+        System.out.println("Step 7: Verify Tickets are Display");
+        Assert.assertFalse(myTicketPage.isLblNoResultFoundErrorMessage(), "Tickets are not display");
 
     }
 }

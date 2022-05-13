@@ -40,10 +40,13 @@ public class TC68 extends TestBase {
         System.out.println("Step 4: Click on \"My ticket\" tab");
         homePage.goToMyTicketPage();
 
-        System.out.println("Step 5: Filter tickets by choosing Arrive Station");
+        System.out.println("Step 5: Choosing Arrive Station");
         myTicketPage.selectDropDownArriveStation("Phan Thiết");
 
-        System.out.println("Step 6: Verify Filter bar Display");
+        System.out.println("Step 6: Click ApplyFilter button ");
+        myTicketPage.clickApplyFilterButton();
+
+        System.out.println("Step 7: Verify Tickets are Display");
         Assert.assertFalse(myTicketPage.isLblNoResultFoundErrorMessage(), "No Result Found Error Message is display");
 
     }
@@ -74,10 +77,13 @@ public class TC68 extends TestBase {
         System.out.println("Step 4: Click on \"My ticket\" tab");
         homePage.goToMyTicketPage();
 
-        System.out.println("Step 5: Filter tickets by choosing Arrive Station");
+        System.out.println("Step 5: Choosing Arrive Station");
         myTicketPage.selectDropDownArriveStation("Huế");
 
-        System.out.println("Step 6: Verify Filter bar Display");
+        System.out.println("Step 6: Click ApplyFilter button ");
+        myTicketPage.clickApplyFilterButton();
+
+        System.out.println("Step 7: Verify No Result Found Error Message Display");
         Assert.assertTrue(myTicketPage.isLblNoResultFoundErrorMessage(), "Tickets are display");
 
     }

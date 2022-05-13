@@ -20,17 +20,17 @@ public class MyTicketPage {
 
     private final By btnApplyFilter = By.xpath("//input[@value='Apply Filter']");
 
-    private final By lblNoResultFoundErrorMessage = By.xpath("//div[@class='error message']");
+    private final By lblNoResultFoundErrorMessage = By.xpath("//div[@align='center']//div[@class='error message']");
 
-    private final By dropDownStatus=By.xpath("//select[@name='FilterStatus']");
+    private final By dropDownStatus = By.xpath("//select[@name='FilterStatus']");
 
-    private final By txtDepartDate=By.name("FilterDpDate");
+    private final By txtDepartDate = By.name("FilterDpDate");
 
-    private final By lblMalformedDateErrorMessage=By.xpath("//div[@class='Filter']//div[@class='error message']");
+    private final By lblMalformedDateErrorMessage = By.xpath("//div[@class='Filter']//div[@class='error message']");
 
-    private final By dropDownArriveStation=By.xpath("//select[@name='FilterArStation']");
+    private final By dropDownArriveStation = By.xpath("//select[@name='FilterArStation']");
 
-    private final By dropDownDepartStation=By.xpath("//select[@name='FilterDpStation']");
+    private final By dropDownDepartStation = By.xpath("//select[@name='FilterDpStation']");
 
     //Elements
 
@@ -130,20 +130,25 @@ public class MyTicketPage {
             return false;
         }
     }
-    public void selectDropDownStatus(String option){
+
+    public void selectDropDownStatus(String option) {
         getDropDownStatus().selectByVisibleText(option);
+    }
+
+    public void selectDropDownArriveStation(String option) {
+        getDropDownArriveStation().selectByVisibleText(option);
+    }
+
+    public void selectDropDownDepartStation(String option) {
+        getDropDownDepartStation().selectByVisibleText(option);
+    }
+
+    public void clickApplyFilterButton() {
         getBtnApplyFilter().click();
     }
 
-    public void selectDropDownArriveStation(String option){
-        getDropDownArriveStation().selectByVisibleText(option);
-        getBtnApplyFilter().click();
-    }
-    public void selectDropDownDepartStation(String option){
-        getDropDownDepartStation().selectByVisibleText(option);
-        getBtnApplyFilter().click();
-    }
-    public void enterDepartDate(String departDate){
+
+    public void enterDepartDate(String departDate) {
         getTxtDepartDate().sendKeys(departDate);
     }
 
@@ -151,6 +156,5 @@ public class MyTicketPage {
         Alert alert = Constant.WEBDRIVER.switchTo().alert();
         alert.accept();
     }
-
 
 }
