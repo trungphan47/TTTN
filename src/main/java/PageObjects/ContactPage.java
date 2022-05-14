@@ -8,7 +8,6 @@ public class ContactPage {
     //Locator
     private final By tabContact = By.xpath("//a[@href='/Page/Contact.cshtml']");
 
-
     private final By seatCode = By.xpath("/html/body/div[1]/div[2]/div/p[1]");
 
     private final By phone = By.xpath("//*[@id=\"content\"]/div/p[2]");

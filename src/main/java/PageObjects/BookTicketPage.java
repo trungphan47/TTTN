@@ -20,6 +20,8 @@ public class BookTicketPage {
 
     private final By btnBookTicket = By.xpath("//input[@value='Book ticket']");
 
+    private final By messageNoMoreBookTicket = By.xpath("//*[@id=\"content\"]/div[1]/form/fieldset/ol/li[5]/label[2]");
+
     String dgdBookTicketSuccessfully = "//tbody/tr[@class='OddRow']/td[count(//th[text()='Depart Station']/preceding-sibling::th)+'%s']";
 
     //Elements
@@ -52,9 +54,12 @@ public class BookTicketPage {
         return Constant.WEBDRIVER.findElement(btnBookTicket);
     }
 
+    public WebElement getMessageNoMoreBookTicket() {return Constant.WEBDRIVER.findElement(messageNoMoreBookTicket);}
+
     public WebElement getDgdBookTicketSuccessfully(String no) {
         return Constant.WEBDRIVER.findElement(By.xpath(String.format(dgdBookTicketSuccessfully, no)));
     }
+
 
     //Methods
     public void bookTicket(String departDate, String departStation, String arriveStation, String seatType, String ticketAmount) throws InterruptedException {
@@ -66,6 +71,8 @@ public class BookTicketPage {
         getDdlTicketAmount().selectByVisibleText(ticketAmount);
         getBtnBookTicket().submit();
     }
+
+    public String getNoMoreBookTicketMessage() {return this.getMessageNoMoreBookTicket().getText();}
 
     public String getDataBookedTicketSuccessfully(String no) {
         return this.getDgdBookTicketSuccessfully(no).getText();

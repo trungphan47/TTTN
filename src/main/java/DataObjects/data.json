@@ -1,11 +1,17 @@
 {
-  "TC14": {
-    "departStation": "Nha Trang",
-    "arriveStation": "Sài Gòn",
+  "TC56": {
+    "departStation": "Phan Thiết",
+    "arriveStation": "Nha Trang",
     "seatType": "Soft seat with air conditioner",
+    "ticketAmount": "10"
+  },
+  "TC58": {
+    "departStation": "Nha Trang",
+    "arriveStation": "Đà Nẵng",
+    "seatType": "Soft seat",
     "ticketAmount": "5"
   },
-  "TC15": {
+  "TC46": {
     "departStation": "Đà Nẵng",
     "arriveStation": "Sài Gòn",
     "seatType": "Seat type HS SS SSC HB SB SBC",
@@ -29,13 +35,17 @@
     "seatType": "Soft bed",
     "ticketAmount": "3"
   },
-  "FTTC502": {
+  "TC58": {
     "departStation": "Đà Nẵng",
     "arriveStation": "Quảng Ngãi",
     "seatType": "Soft bed",
     "ticketAmount": "1"
   },
-  "FTTC303": {
+  "TC50": {
+    "departStation": "Đà Nẵng",
+    "arriveStation": "Huế"
+  },
+  "TC51": {
     "HS": 150000
   },
   "TC37": {

@@ -27,11 +27,14 @@ public class GeneralPage {
 
     private final By tabBookTicket = By.xpath("//a[@href='/Page/BookTicketPage.cshtml']//span");
 
+    private final By tabForgotPassword = By.xpath("//*[@id=\"content\"]/ul/li[3]/a");
+
     private final By lblWelcomeMessage = By.xpath("//div[@class='account']//strong");
 
     private final By lblMessageErrorCommon = By.xpath("//p[@class='message error']");
 
     private final By lblValidationError = By.xpath("//label[@class='validation-error']");
+
 
     //Elements
     public WebElement getLblNamePages() {
@@ -74,11 +77,11 @@ public class GeneralPage {
         return Constant.WEBDRIVER.findElement(tabMyTicket);
     }
 
+    public WebElement getTabForgotPassword() {return Constant.WEBDRIVER.findElement(tabForgotPassword);}
+
     public WebElement getLblMessageErrorCommon() {
         return Constant.WEBDRIVER.findElement(lblMessageErrorCommon);
     }
-
-    ;
 
     public WebElement getLblValidationError() {
         return Constant.WEBDRIVER.findElement(lblValidationError);
@@ -124,6 +127,8 @@ public class GeneralPage {
     public void goToMyTicketPage() {
         this.getTabMyTicket().click();
     }
+
+    public void goToForgotPasswordPage() {this.getTabForgotPassword().click();}
 
     public String getTitleErrorMessageCommonInForms() {
         return this.getLblMessageErrorCommon().getText();
