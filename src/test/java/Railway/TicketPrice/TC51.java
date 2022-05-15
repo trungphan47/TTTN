@@ -21,7 +21,7 @@ public class TC51 extends TestBase {
 
     @Test(description = "Verify that \"book ticket\" link can navigate to Book Ticket tab", dataProvider = "data-provider")
 
-    public void TC51(float hsPrice) {
+    public void TC51(String departStation, String arriveStation, float hsPrice) {
         System.out.println("Step 1: Navigate to QA Railway Website");
         homePage.open();
 
@@ -37,7 +37,7 @@ public class TC51 extends TestBase {
 
         System.out.println("Step 4:  Click \"Check Price\" in section \"Trains depart from Đà\n" + "Nẵng\" " +
                 "for checking price Đà Nẵng to Huế");
-        ticketPricePage.clickBtnCheckPrice("19");
+        ticketPricePage.clickBtnCheckPrice(departStation, arriveStation);
 
         System.out.println("Step 5: On Ticket price page, click \"Book ticket\" with Hard\n" + "seat");
         ticketPricePage.clickBtnBookTicketInTicketPricePage("2");
@@ -55,10 +55,12 @@ public class TC51 extends TestBase {
         String filePath = Utilities.getProjectPathDataJson();
         JsonObject jsonObject = JsonHelper.getJsonObject(filePath);
         JsonObject TC50 = jsonObject.getAsJsonObject(this.getClass().getSimpleName());
+        String departStation = TC50.get("departStation").getAsString();
+        String arriveStation = TC50.get("arriveStation").getAsString();
         float hsPrice = TC50.get("HS").getAsFloat();
 
         Object[][] object = new Object[][]{
-                {hsPrice}
+                {departStation, arriveStation, hsPrice}
         };
         return object;
     }

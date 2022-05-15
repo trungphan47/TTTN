@@ -36,7 +36,7 @@ public class TC50 extends TestBase {
 
         System.out.println("Step 4:  Click \"Check Price\" in section \"Trains depart from Đà\n" + "Nẵng\" " +
                 "for checking price Đà Nẵng to Huế");
-        ticketPricePage.clickBtnCheckPrice("19");
+        ticketPricePage.clickBtnCheckPrice(departStation, arriveStation);
         String actualTableTitle = ticketPricePage.getDataEachRowInTicketPriceTable("1");
         String expectedTableTiltle = "Ticket price from " + departStation + " to " + arriveStation;
         Assert.assertEquals(actualTableTitle, expectedTableTiltle, "Display Ticket Error" );
