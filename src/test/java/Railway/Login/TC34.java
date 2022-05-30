@@ -1,4 +1,4 @@
-package java.Railway.Login;
+package Railway.Login;
 
 import Common.Constant;
 import PageObjects.HomePage;

@@ -54,12 +54,13 @@ public class BookTicketPage {
         return Constant.WEBDRIVER.findElement(btnBookTicket);
     }
 
-    public WebElement getMessageNoMoreBookTicket() {return Constant.WEBDRIVER.findElement(messageNoMoreBookTicket);}
+    public WebElement getMessageNoMoreBookTicket() {
+        return Constant.WEBDRIVER.findElement(messageNoMoreBookTicket);
+    }
 
     public WebElement getDgdBookTicketSuccessfully(String no) {
         return Constant.WEBDRIVER.findElement(By.xpath(String.format(dgdBookTicketSuccessfully, no)));
     }
-
 
     //Methods
     public void bookTicket(String departDate, String departStation, String arriveStation, String seatType, String ticketAmount) throws InterruptedException {
@@ -72,7 +73,9 @@ public class BookTicketPage {
         getBtnBookTicket().submit();
     }
 
-    public String getNoMoreBookTicketMessage() {return this.getMessageNoMoreBookTicket().getText();}
+    public String getNoMoreBookTicketMessage() {
+        return this.getMessageNoMoreBookTicket().getText();
+    }
 
     public String getDataBookedTicketSuccessfully(String no) {
         return this.getDgdBookTicketSuccessfully(no).getText();
@@ -105,6 +108,17 @@ public class BookTicketPage {
             homePage.goToBookTicketPage();
             Utilities.scrollPage(getBtnBookTicket());
             getBtnBookTicket().submit();
+        }
+    }
+
+    public void clickBtnBookTicketMutilpleTime(int time, String departDate) {
+        for (int i = 0; i < time; i++) {
+            HomePage homePage = new HomePage();
+            homePage.goToBookTicketPage();
+            getDdlDepartDate().selectByVisibleText(departDate);
+            Utilities.scrollPage(getBtnBookTicket());
+            getBtnBookTicket().submit();
+
         }
     }
 }

@@ -23,6 +23,7 @@ public class TC65 extends TestBase {
         String password = Utilities.getPasswordRandom();
         String confirmPassword = password;
         String pid = Utilities.getPidRandom();
+        String departDate=Utilities.getDepartDate(7);
         registerPage.register(username, password, confirmPassword, pid);
 
         System.out.println("Step 1: Navigate to QA Railway Website");
@@ -34,7 +35,7 @@ public class TC65 extends TestBase {
 
         System.out.println("Step 3: Book a ticket");
         homePage.goToBookTicketPage();
-        bookTicketPage.clickBtnBookTicketMutilpleTime(6);
+        bookTicketPage.clickBtnBookTicketMutilpleTime(6, departDate);
 
         System.out.println("Step 4: Click on \"My ticket\" tab");
         homePage.goToMyTicketPage();
@@ -60,6 +61,7 @@ public class TC65 extends TestBase {
         String password = Utilities.getPasswordRandom();
         String confirmPassword = password;
         String pid = Utilities.getPidRandom();
+        String departDate = Utilities.getDepartDate(22);
         registerPage.register(username, password, confirmPassword, pid);
 
         System.out.println("Step 1: Navigate to QA Railway Website");
@@ -71,19 +73,18 @@ public class TC65 extends TestBase {
 
         System.out.println("Step 3: Book a ticket");
         homePage.goToBookTicketPage();
-        bookTicketPage.clickBtnBookTicketMutilpleTime(6);
+        bookTicketPage.clickBtnBookTicketMutilpleTime(6, departDate);
 
         System.out.println("Step 4: Click on \"My ticket\" tab");
         homePage.goToMyTicketPage();
 
         System.out.println("Step 5: Choosing Status");
-        myTicketPage.selectDropDownStatus("Paid");
+        myTicketPage.selectDropDownStatus("New");
 
         System.out.println("Step 6: Click ApplyFilter button ");
         myTicketPage.clickApplyFilterButton();
 
         System.out.println("Step 7: Verify No Result Found Error Message Display");
-        Assert.assertTrue(myTicketPage.isLblNoResultFoundErrorMessage(), "Tickets are display");
-
+        Assert.assertFalse(myTicketPage.isLblNoResultFoundErrorMessage(), "Tickets are display");
     }
 }

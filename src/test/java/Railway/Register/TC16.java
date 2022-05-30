@@ -1,4 +1,4 @@
-package java.Railway.Register;
+package Railway.Register;
 
 import Common.Utilities;
 import PageObjects.HomePage;

@@ -1,4 +1,25 @@
 {
+  "TC40": {
+    "seatCode": "404",
+    "phone": "012650.888.79",
+    "skype": "vietthanhle.lg",
+    "email": "thanh.viet.le@logigear.com"
+  },
+  "TC46": {
+    "departStation": "Đà Nẵng",
+    "arriveStation": "Sài Gòn",
+    "seatType": "Seat type HS SS SSC HB SB SBC",
+    "ticketPrice": "Price (VND) 310000 335000 360000 410000 460000 510000"
+  },
+  "TC50": {
+    "departStation": "Đà Nẵng",
+    "arriveStation": "Huế"
+  },
+  "TC51": {
+    "departStation": "Đà Nẵng",
+    "arriveStation": "Huế",
+    "HS": 150000
+  },
   "TC56": {
     "departStation": "Phan Thiết",
     "arriveStation": "Nha Trang",
@@ -11,36 +32,15 @@
     "seatType": "Soft seat",
     "ticketAmount": "5"
   },
-  "TC46": {
-    "departStation": "Đà Nẵng",
-    "arriveStation": "Sài Gòn",
-    "seatType": "Seat type HS SS SSC HB SB SBC",
-    "ticketPrice": "Price (VND) 310000 335000 360000 410000 460000 510000"
-  },
-  "TC58": {
+  "TC61": {
     "departStation": "Đà Nẵng",
     "arriveStation": "Quảng Ngãi",
     "seatType": "Soft bed",
     "ticketAmount": "1"
   },
-  "TC50": {
-    "departStation": "Đà Nẵng",
-    "arriveStation": "Huế"
-  },
-  "TC51": {
-    "departStation": "Đà Nẵng",
-    "arriveStation": "Huế",
-    "HS": 150000
-  },
-  "TC40": {
-      "seatCode": "404",
-      "phone": "012650.888.79",
-      "skype": "vietthanhle.lg",
-      "email": "thanh.viet.le@logigear.com"
-  },
-  "TC61": {
-    "departStation": "Đà Nẵng",
-    "arriveStation": "Quảng Ngãi",
+  "TC63": {
+    "departStation": "Quảng Ngãi",
+    "arriveStation": "Đà Nẵng",
     "seatType": "Soft bed",
     "ticketAmount": "1"
   }

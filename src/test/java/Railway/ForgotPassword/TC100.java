@@ -25,7 +25,7 @@ public class TC100 extends TestBase {
 
         System.out.println("Step 4:  Fill an invalid email in \"Email Address\" ");
         System.out.println("Step 5: Click Send Instructions button");
-        forgotPasswordPage.forgotPassword(Utilities.getEmailRandom());
+        forgotPasswordPage.forgotPassword(Utilities.getPasswordRandom());
 
         String actualMsg = forgotPasswordPage.getInvalidEmailResetMess();
         String expectedMsg = "Please enter a valid email";

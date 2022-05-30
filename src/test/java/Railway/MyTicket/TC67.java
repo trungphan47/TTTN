@@ -24,7 +24,7 @@ public class TC67 extends TestBase {
         String password = Utilities.getPasswordRandom();
         String confirmPassword = password;
         String pid = Utilities.getPidRandom();
-        String departDate=Utilities.getDepartDate(7);
+        String departDate=Utilities.getDepartDate(21);
         registerPage.register(username, password, confirmPassword, pid);
 
         System.out.println("Step 1: Navigate to QA Railway Website");
@@ -36,7 +36,7 @@ public class TC67 extends TestBase {
 
         System.out.println("Step 3: Book a ticket");
         homePage.goToBookTicketPage();
-        bookTicketPage.clickBtnBookTicketMutilpleTime(6);
+        bookTicketPage.clickBtnBookTicketMutilpleTime(6, departDate);
 
         System.out.println("Step 4: Click on \"My ticket\" tab");
         homePage.goToMyTicketPage();

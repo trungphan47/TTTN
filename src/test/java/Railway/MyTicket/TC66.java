@@ -15,7 +15,7 @@ public class TC66 extends TestBase {
     RegisterPage registerPage = new RegisterPage();
 
     @Test(description = "User can filter tickets by entering correct Depart Date format")
-    public void TC01() {
+    public void TC66() {
 
         System.out.println("Pre-condition: Create and activate a new account");
         homePage.open();
@@ -24,7 +24,7 @@ public class TC66 extends TestBase {
         String password = Utilities.getPasswordRandom();
         String confirmPassword = password;
         String pid = Utilities.getPidRandom();
-        String departDate = Utilities.getDepartDate(4);
+        String departDate = Utilities.getDepartDate(23);
         registerPage.register(username, password, confirmPassword, pid);
 
         System.out.println("Step 1: Navigate to QA Railway Website");
@@ -36,7 +36,7 @@ public class TC66 extends TestBase {
 
         System.out.println("Step 3: Book a ticket");
         homePage.goToBookTicketPage();
-        bookTicketPage.clickBtnBookTicketMutilpleTime(6);
+        bookTicketPage.clickBtnBookTicketMutilpleTime(6, departDate);
 
         System.out.println("Step 4: Click on \"My ticket\" tab");
         homePage.goToMyTicketPage();
@@ -49,6 +49,5 @@ public class TC66 extends TestBase {
 
         System.out.println("Step 7: Verify Tickets are Display");
         Assert.assertFalse(myTicketPage.isLblNoResultFoundErrorMessage(), "Tickets are not display");
-
     }
 }

@@ -42,7 +42,7 @@ public class TC79 extends TestBase {
         homePage.goToMyTicketPage();
 
         System.out.println("Step 5: Choosing Arriver Station");
-        myTicketPage.selectDropDownArriveStation("Phan Thiết");
+        myTicketPage.selectDropDownArriveStation("Nha Trang");
 
         System.out.println("Step 6: Choosing Depart Station");
         myTicketPage.selectDropDownDepartStation("Sài Gòn");
@@ -70,7 +70,7 @@ public class TC79 extends TestBase {
         String password = Utilities.getPasswordRandom();
         String confirmPassword = password;
         String pid = Utilities.getPidRandom();
-        String departDate = Utilities.getDepartDate(4);
+        String departDate = Utilities.getDepartDate(13);
         registerPage.register(username, password, confirmPassword, pid);
 
         System.out.println("Step 1: Navigate to QA Railway Website");
@@ -82,7 +82,7 @@ public class TC79 extends TestBase {
 
         System.out.println("Step 3: Book a ticket");
         homePage.goToBookTicketPage();
-        bookTicketPage.clickBtnBookTicketMutilpleTime(6);
+        bookTicketPage.clickBtnBookTicketMutilpleTime(6, departDate);
 
         System.out.println("Step 4: Click on \"My ticket\" tab");
         homePage.goToMyTicketPage();

@@ -16,9 +16,11 @@ public class TC63 extends TestBase {
     BookTicketPage bookTicketPage = new BookTicketPage();
     RegisterPage registerPage = new RegisterPage();
 
-    @Test(description = "User can cancel a ticket", dataProvider = "data-provider")
+    @Test(description = "Verify that user can not change Depart Station, " +
+            "Arrive Station, Seat Type, Depart Date, Book Date, Expired Date, Status Amount, " +
+            "Total Price of ticket", dataProvider = "data-provider")
 
-    public void TC61(String departStation, String arriveStation, String seatType, String ticketAmount) throws InterruptedException {
+    public void TC63(String departStation, String arriveStation, String seatType, String ticketAmount) throws InterruptedException {
         System.out.println("Pre-condition: Create and activate a new account");
         homePage.open();
         homePage.goToRegisterPage();
@@ -54,29 +56,17 @@ public class TC63 extends TestBase {
                         || ((myTicketPage.isBtnCancelDisappear() == false) &&
                         (getOnClickHanding != myTicketPage.getBtnCancel().getAttribute("onclick"))),
                 "Cancel button is not disappear");
-
-        System.out.println("Step 4: Click on \"My ticket\" tab");
-        homePage.goToBookTicketPage();
-
-        System.out.println("Step 3: Book a ticket");
-        bookTicketPage.bookTicket("","","","","");
-
-        System.out.println("Step 4: Click on \"My ticket\" tab");
-        homePage.goToMyTicketPage();
-
-        System.out.println("Step 5: Verify Filter bar Display");
-        Assert.assertTrue(myTicketPage.isBtnApplyFilterDisappear(),"Apply Filter is not display");
     }
 
     @DataProvider(name = "data-provider")
     public Object[][] dataProvider() {
         String filePath = Utilities.getProjectPathDataJson();
         JsonObject jsonObject = JsonHelper.getJsonObject(filePath);
-        JsonObject dataTTC502 = jsonObject.getAsJsonObject(this.getClass().getSimpleName());
-        String departStation = dataTTC502.get("departStation").getAsString();
-        String arriveStation = dataTTC502.get("arriveStation").getAsString();
-        String seatType = dataTTC502.get("seatType").getAsString();
-        String ticketAmount = dataTTC502.get("ticketAmount").getAsString();
+        JsonObject dataTC63 = jsonObject.getAsJsonObject(this.getClass().getSimpleName());
+        String departStation = dataTC63.get("departStation").getAsString();
+        String arriveStation = dataTC63.get("arriveStation").getAsString();
+        String seatType = dataTC63.get("seatType").getAsString();
+        String ticketAmount = dataTC63.get("ticketAmount").getAsString();
 
         Object[][] object = new Object[][]{
                 {departStation, arriveStation, seatType, ticketAmount}

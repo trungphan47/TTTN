@@ -22,15 +22,19 @@ public class MyTicketPage {
 
     private final By lblNoResultFoundErrorMessage = By.xpath("//div[@align='center']//div[@class='error message']");
 
-    private final By dropDownStatus = By.xpath("//select[@name='FilterStatus']");
+    private final By dropDownStatus = By.xpath("//tbody/tr[2]/td[4]/select[1]");
+            //By.xpath("//select[@name='FilterStatus']");
 
-    private final By txtDepartDate = By.name("FilterDpDate");
+    private final By txtDepartDate = By.xpath("//tbody/tr[2]/td[3]/input[1]");
+            //By.name("FilterDpDate");
 
     private final By lblMalformedDateErrorMessage = By.xpath("//div[@class='Filter']//div[@class='error message']");
 
-    private final By dropDownArriveStation = By.xpath("//select[@name='FilterArStation']");
+    private final By dropDownArriveStation = By.xpath("//tbody/tr[2]/td[2]/select[1]");
+    // By.xpath("//select[@name='FilterArStation']");
 
-    private final By dropDownDepartStation = By.xpath("//select[@name='FilterDpStation']");
+    private final By dropDownDepartStation = By.xpath("//tbody/tr[2]/td[1]/select[1]");
+            //By.xpath("//select[@name='FilterDpStation']");
 
     //Elements
 
@@ -55,7 +59,7 @@ public class MyTicketPage {
     }
 
     public Select getDropDownStatus() {
-        Select status = new Select(Utilities.waitForElement(10, dropDownStatus));
+        Select status = new Select(Utilities.waitForElement(20, dropDownStatus));
         return status;
     }
 
@@ -68,12 +72,12 @@ public class MyTicketPage {
     }
 
     public Select getDropDownArriveStation() {
-        Select arriveStation = new Select(Utilities.waitForElement(10, dropDownArriveStation));
+        Select arriveStation = new Select(Utilities.waitForElement(20, dropDownArriveStation));
         return arriveStation;
     }
 
     public Select getDropDownDepartStation() {
-        Select departStation = new Select(Utilities.waitForElement(10, dropDownDepartStation));
+        Select departStation = new Select(Utilities.waitForElement(20, dropDownDepartStation));
         return departStation;
     }
 

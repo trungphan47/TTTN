@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [All Test Suite]">
+  <test name="E:/28. TTTN/TTTN(failed)">
+    <classes>
+      <class name="Railway.ForgotPassword.TC98">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- Railway.ForgotPassword.TC98 -->
+      <class name="Railway.ForgotPassword.TC97">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="TC97"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- Railway.ForgotPassword.TC97 -->
+      <class name="Railway.ForgotPassword.TC96">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- Railway.ForgotPassword.TC96 -->
+      <class name="Railway.ForgotPassword.TC99">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- Railway.ForgotPassword.TC99 -->
+      <class name="Railway.ForgotPassword.TC100">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- Railway.ForgotPassword.TC100 -->
+    </classes>
+  </test> <!-- E:/28. TTTN/TTTN(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->

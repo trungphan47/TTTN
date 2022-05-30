@@ -30,7 +30,6 @@ public class TC15 extends TestBase {
         String confirmPassword = password;
         registerPage.register(email2, password, confirmPassword, Utilities.getPidRandom());
 
-
         String actualMsg1 = registerPage.getErrorRegisterAccountFail();
         String expectedMsg1 = "There're errors in the form. Please correct the errors and try again.";
 
