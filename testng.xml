@@ -3,8 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="E:/28. TTTN/TTTN">
         <packages>
-            <package name="Railway.ForgotPassword">
-            </package>
+            <package name="Railway.Logout"></package>
         </packages>
     </test>
 </suite>

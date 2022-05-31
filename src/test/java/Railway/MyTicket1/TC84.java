@@ -1,4 +1,4 @@
-package Railway.MyTicket;
+package Railway.MyTicket1;
 
 import Common.Utilities;
 import PageObjects.*;
@@ -48,7 +48,7 @@ public class TC84 extends TestBase {
         myTicketPage.enterDepartDate(departDate);
 
         System.out.println("Step 7: Choosing Arrive Station");
-        myTicketPage.selectDropDownDepartStation("Phan Thiết");
+        myTicketPage.selectDropDownArriveStation("Phan Thiết");
 
         System.out.println("Step 8: Click ApplyFilter button ");
         myTicketPage.clickApplyFilterButton();
@@ -92,7 +92,7 @@ public class TC84 extends TestBase {
         myTicketPage.enterDepartDate(departDate);
 
         System.out.println("Step 7: Choosing Arrive Station");
-        myTicketPage.selectDropDownDepartStation("Sài Gòn");
+        myTicketPage.selectDropDownArriveStation("Sài Gòn");
 
         System.out.println("Step 8: Click ApplyFilter button ");
         myTicketPage.clickApplyFilterButton();

@@ -48,7 +48,7 @@ public class TC85 extends TestBase {
         myTicketPage.enterDepartDate(departDate);
 
         System.out.println("Step 7: Choosing Arrive Station");
-        myTicketPage.selectDropDownDepartStation("Phan Thiết");
+        myTicketPage.selectDropDownArriveStation("Phan Thiết");
 
         System.out.println("Step 8: Choosing Depart Station");
         myTicketPage.selectDropDownDepartStation("Sài Gòn");
@@ -95,7 +95,7 @@ public class TC85 extends TestBase {
         myTicketPage.enterDepartDate(departDate);
 
         System.out.println("Step 7: Choosing Arrive Station");
-        myTicketPage.selectDropDownDepartStation("Sài Gòn");
+        myTicketPage.selectDropDownArriveStation("Sài Gòn");
 
         System.out.println("Step 8: Choosing Depart Station");
         myTicketPage.selectDropDownDepartStation("Phan Thiết");

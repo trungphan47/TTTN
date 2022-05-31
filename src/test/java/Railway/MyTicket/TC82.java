@@ -95,7 +95,7 @@ public class TC82 extends TestBase {
         myTicketPage.enterDepartDate(departDate + "1");
 
         System.out.println("Step 7: Filter tickets by choosing Depart Station");
-        myTicketPage.selectDropDownDepartStation("Sài Gòn");
+        myTicketPage.selectDropDownDepartStation("Phan Thiết");
 
         System.out.println("Step 8: Click ApplyFilter button ");
         myTicketPage.clickApplyFilterButton();

@@ -1,4 +1,4 @@
-package Railway.MyTicket;
+package Railway.MyTicket1;
 
 import Common.Utilities;
 import PageObjects.*;
@@ -54,7 +54,7 @@ public class TC80 extends TestBase {
         myTicketPage.clickApplyFilterButton();
 
         System.out.println("Step 9: Verify No Result Found Error Message Display");
-        Assert.assertTrue(myTicketPage.isLblNoResultFoundErrorMessage(), "Tickets are display");
+        Assert.assertFalse(myTicketPage.isLblNoResultFoundErrorMessage(), "Tickets are display");
 
     }
 
